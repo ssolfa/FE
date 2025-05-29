@@ -520,7 +520,7 @@ export default function Camera() {
 
     captureInterval.current = setInterval(() => {
       capture();
-    }, 1000);
+    }, 700);
   }, [capture]);
 
   useEffect(() => {
@@ -588,11 +588,11 @@ export default function Camera() {
           screenshotFormat="image/jpeg"
           videoConstraints={{
             facingMode: 'environment',
-
-            aspectRatio: 4 / 3,
+            width: 640,
+            height: 480,
           }}
           className="h-full w-full object-cover"
-          screenshotQuality={1}
+          screenshotQuality={0.4}
         />
         <canvas
           ref={canvasRef}
